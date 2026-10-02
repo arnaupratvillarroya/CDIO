@@ -23,7 +23,7 @@ NUM_THREADS = 1      # Fils per a la descàrrega (I/O-bound)
 NUM_PROCESSES = 1    # Processos per al càlcul de NDWI (CPU-bound)
 
 # Directoris del projecte
-base_dir = Path(r"C:\Users\Usuario\CDIO")
+base_dir = Path(r"/home/cbltic/Escriptori/CDIO_1/CDIO")
 bands_dir = base_dir / "data" / "images_mt_1"
 output_dir = base_dir / "data" / "ndwi_results"
 photos_dir = base_dir / "Photos"
