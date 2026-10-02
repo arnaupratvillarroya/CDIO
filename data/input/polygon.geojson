@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Platja de Castelldefels (sense port)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1.9280, 41.2550],
+            [1.9950, 41.2550],
+            [1.9950, 41.2750],
+            [1.9280, 41.2750],
+            [1.9280, 41.2550]
+          ]
+        ]
+      }
+    }
+  ]
+}

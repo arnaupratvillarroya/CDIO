@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="832d31bb-d794-4f4d-9d1f-b6acf0d8b6b7" name="Changes" comment="" />
+    <list default="true" id="832d31bb-d794-4f4d-9d1f-b6acf0d8b6b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/input/polygon.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculate_erosion.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculate_erosion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/distances_summary.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/distances_summary.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_02_05.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_02_05.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_03_27.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_03_27.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_01.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_01.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_06.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_06.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_21.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_04_21.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_16.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_16.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_23.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_23.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_31.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_05_31.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_20.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_20.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_22.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_22.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_25.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_25.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_30.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/line_2025_06_30.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/ref_2025_01_14.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/ref_2025_01_14.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/shoreline_distances.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/output/estimated_erosion_accretion/shoreline_distances.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,23 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.ndwi_analysis_Gerard.executor": "Run",
-    "Python.ndwi_n_photos.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature-ndwi-analisis4",
-    "last_opened_file_path": "/home/cbltic/Escriptori/CDIO_1/CDIO",
-    "node.js.detected.package.jshint": "true",
-    "node.js.selected.package.jshint": "",
-    "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.ndwi_analysis_Gerard.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ndwi_n_photos.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature-ndwi-analisis4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cbltic/Escriptori/CDIO_1/CDIO&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
