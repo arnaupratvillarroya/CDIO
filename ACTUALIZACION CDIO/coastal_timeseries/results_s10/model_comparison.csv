@@ -1,0 +1,4 @@
+model,RMSE,MAE,R2,AIC,BIC,n_params,detall_tendencia
+linear,1.459,0.772,0.861,86.2,113.1,11,
+step,1.501,0.995,0.853,93.0,122.3,12,salt = +6.70 m a 2020-02-01
+sigmoid,1.383,0.963,0.875,83.1,117.3,14,"amplitud = +8.45 m, t0 = 2019-11-01, k = 0.5"
