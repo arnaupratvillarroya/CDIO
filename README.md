@@ -16,7 +16,7 @@ El código está organizado de forma esquematica para separar claramente las dis
 
 CDIO-repository
 
- - 📂 data/          # Guarda los archivos necesarios para ejecutar el codigo (Mapas gjson.), una vez ejecutado genera Imágenes Sentinel-2, Ground Truth y resultados
+ - 📂 data/          # (Se genera al ejecutar) Imágenes Sentinel-2, GeoJSONs, Ground Truth y resultados
  
  - 📂 download/      # Descarga de datos y preprocesamiento
  
@@ -27,3 +27,12 @@ CDIO-repository
  - 📂 pipeline/      # Orquestador del proyecto
  
  - 📂 tests/         # Pruebas unitarias de los módulos
+
+
+**Descarga y Procesamiento de Imagenes**:
+
+En este apartado accedemos al los archivos de STAC para buscar y descargar bandas multiespectrales (Green y NIR) de Sentinel-2.
+
+- search_images.py / download_gt_scenes.py: Buscan y descargan imágenes de las fechas de interes.
+
+- ndwi_n_photose.py / ndwi_denoising.py: Aplican métodos de reducción de ruido y calculan el índice NDWI utilizando Multiprocesamiento y Multithreading.
