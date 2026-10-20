@@ -100,4 +100,28 @@ Por ejemplo:
 
 - python pipeline/cdio_pipeline.py --method bilateral
 
+## Resultados Visuales y Ejemplos Ilustrativos
+
+Trabajar con imágenes satelitales es un reto. Nos podemos encontrar imágenes completamente negras, con exceso de nubes o con datos corruptos que hacen fallar los algoritmos. Sin embargo, cuando la *pipeline* procesa una escena limpia, los resultados son muy claros.
+
+A continuación, mostramos algunos ejemplos ilustrativos de lo que consiguen nuestros códigos.
+
+### 1. Cálculo del Índice NDWI (Índice Diferencial de Agua Normalizado)
+
+Mediante la combinación de las bandas espectrales **Green** y **NIR** de Sentinel-2, se obtiene el mapa continuo de NDWI. Los valores positivos (azul oscuro) identifican los cuerpos de agua (mar, canales y lagunas), mientras que los valores negativos corresponden a la superficie terrestre.
+
+<img width="1500" height="1200" alt="S2A_31TDF_20180717_0_L2A_NDWI" src="https://github.com/user-attachments/assets/71f3a4bf-ec8c-437d-96b4-89b675ce1138" />
+
+
+[S2A_31TDF_20180717_0_L2A_NDWI.tif](https://github.com/user-attachments/files/33742940/S2A_31TDF_20180717_0_L2A_NDWI.tif)
+
+
+### 2. Impacto del *Denoising* en la Extracción de la Línea de Costa
+
+El cálculo directo del NDWI sobre imágenes crudas introduce falso ruido debido a sombra de edificios, vegetación o variaciones atmosféricas. Al extraer los bordes sin filtrado, el algoritmo detecta objetos por toda la superficie terrestre.
+
+Al aplicar técnicas de filtrado espacial (**Boxcar 4x4** o **Bilateral**), se elimina el grano y conseguimos aislar la línea de costa real y el canal costero:
+
+<img width="1600" height="640" alt="image" src="https://github.com/user-attachments/assets/499a5a97-c561-4044-9f84-60e99274da3d" />
+
 
