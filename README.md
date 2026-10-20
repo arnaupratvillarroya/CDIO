@@ -72,13 +72,12 @@ Módulo encargado de medir la erosión y la precisión de nuestros algoritmos.
 
 Sigue estos pasos para configurar el entorno y ejecutar el proyecto en tu máquina local.
 
-### 1. Clonar el repositorio e instalar dependencias
+### Clonar el repositorio e instalar dependencias
 
 Te recomendamos usar un entorno virtual para no tener conflictos con otras librerías de Python. Abre tu terminal y ejecuta:
 
-```bash
 # 1. Clonar el repositorio
-git clone [https://github.com/tu-usuario/nombre-del-repo.git](https://github.com/tu-usuario/nombre-del-repo.git)
+git clone [https://github.com/tu-usuario/nombre-del-repo.git]
 cd nombre-del-repo
 
 # 2. Crear y activar el entorno virtual
@@ -92,5 +91,13 @@ source env/bin/activate
 # 3. Instalar las dependencias
 pip install -r requirements.txt
 
+###  Ejecutar la Pipeline Principal                       
+La forma más recomendable y facil de ejecutar todo el proyecto (desde la descarga de imágenes hasta la validación de la línea de costa) es utilizar el codigo principal (pipeline).
+
+Puedes elegir el método de reducción de ruido que prefieras añadiendo el argumento --method (opciones: none, boxcar_4x4, bilateral). 
+
+Por ejemplo:
+
+- python pipeline/cdio_pipeline.py --method bilateral
 
 
