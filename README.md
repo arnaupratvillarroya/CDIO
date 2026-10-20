@@ -16,14 +16,14 @@ El código está organizado de forma esquematica para separar claramente las dis
 
 CDIO-repository
 
- ┣ 📂 data/          # (Se genera al ejecutar) Imágenes Sentinel-2, GeoJSONs, Ground Truth y resultados
+ - 📂 data/          # Guarda los archivos necesarios para ejecutar el codigo (Mapas gjson.), una vez ejecutado genera Imágenes Sentinel-2, Ground Truth y resultados
  
- ┣ 📂 download/      # Descarga de datos y preprocesamiento
+ - 📂 download/      # Descarga de datos y preprocesamiento
  
- ┣ 📂 processing/    # Algoritmos de extracción de costas
+ - 📂 processing/    # Algoritmos de extracción de costas
  
- ┣ 📂 evaluation/    # Validación y cálculo de errores
+ - 📂 evaluation/    # Validación y cálculo de errores
  
- ┣ 📂 pipeline/      # Orquestador del proyecto
+ - 📂 pipeline/      # Orquestador del proyecto
  
- ┗ 📂 tests/         # Pruebas unitarias de los módulos
+ - 📂 tests/         # Pruebas unitarias de los módulos
