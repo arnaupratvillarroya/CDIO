@@ -4,7 +4,7 @@ experiments_morphology.py
 Barrido de  (denoising de entrada)  x  (operadores morfologicos sobre la mascara
 de agua)  y calculo del RMSE contra el ground truth en las 3 fechas de validacion.
 
-Colocar junto a cdio_pipeline.py (carpeta "ACTUALIZACION CDIO") y ejecutar:
+Ejecutar:
 
     python experiments_morphology.py --quick      # primera prueba (rapida)
     python experiments_morphology.py              # rejilla completa
@@ -45,7 +45,7 @@ from skimage.restoration import denoise_bilateral
 BASE_DIR = Path(__file__).resolve().parent.parent
 BANDS_DIR = BASE_DIR / "data" / "images_mt_1"
 OUT_DIR = BASE_DIR / "data" / "output" / "experiments"
-GT_DIRS = [BASE_DIR / "ground_truth", BASE_DIR / "data" / "input" / "ground_truth"]
+GT_DIRS = [BASE_DIR / "data" / "ground_truth", BASE_DIR / "ground_truth"]
 
 GT_DATES = ["2017-05-25", "2019-05-23", "2021-06-09"]
 
