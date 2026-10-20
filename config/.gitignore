@@ -1,0 +1,9 @@
+cat << 'EOF' > .gitignore
+.venv/
+Photos/
+__pycache__/
+*.png
+*.jpg
+*.tif
+*.tiff
+EOF
