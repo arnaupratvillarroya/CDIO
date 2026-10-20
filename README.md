@@ -10,6 +10,7 @@
 Somos un grupo de estudiantes apasionados por la observación de la Tierra y espacio exterior.
 
 
+
 **Estructura del Proyecto y Códigos**:
 
 El código está organizado de forma esquematica para separar claramente las distintas fases del procesamiento de los datos. Esta es la estructura principal del repositorio:
@@ -63,7 +64,33 @@ Módulo encargado de medir la erosión y la precisión de nuestros algoritmos.
 
 **Pipeline Principal (/pipeline)**
 
-cdio_pipeline.py: Es el ejecutador del proyecto. Permite ejecutar todo el flujo de trabajo (descarga > procesamiento > evaluación) con un solo comando, pudiendo elegir qué técnica de corrección de ruido aplicar.
+- cdio_pipeline.py: Es el ejecutador del proyecto. Permite ejecutar todo el flujo de trabajo (descarga > procesamiento > evaluación) con un solo comando, pudiendo elegir qué técnica de corrección de ruido aplicar.
+
+
+
+## Instalación y Ejecución
+
+Sigue estos pasos para configurar el entorno y ejecutar el proyecto en tu máquina local.
+
+### 1. Clonar el repositorio e instalar dependencias
+
+Te recomendamos usar un entorno virtual para no tener conflictos con otras librerías de Python. Abre tu terminal y ejecuta:
+
+```bash
+# 1. Clonar el repositorio
+git clone [https://github.com/tu-usuario/nombre-del-repo.git](https://github.com/tu-usuario/nombre-del-repo.git)
+cd nombre-del-repo
+
+# 2. Crear y activar el entorno virtual
+python -m venv env
+
+# En Mac/Linux:
+source env/bin/activate
+# En Windows:
+# env\Scripts\activate
+
+# 3. Instalar las dependencias
+pip install -r requirements.txt
 
 
 
