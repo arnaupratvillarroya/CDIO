@@ -76,19 +76,19 @@ Sigue estos pasos para configurar el entorno y ejecutar el proyecto en tu máqui
 
 Te recomendamos usar un entorno virtual para no tener conflictos con otras librerías de Python. Abre tu terminal y ejecuta:
 
-# 1. Clonar el repositorio
+**1. Clonar el repositorio**
 git clone [https://github.com/tu-usuario/nombre-del-repo.git]
 cd nombre-del-repo
 
-# 2. Crear y activar el entorno virtual
+**2. Crear y activar el entorno virtual**
 python -m venv env
 
-# En Mac/Linux:
+**En Mac/Linux:**
 source env/bin/activate
-# En Windows:
-# env\Scripts\activate
+**En Windows:**
+**env\Scripts\activate**
 
-# 3. Instalar las dependencias
+**Instalar las dependencias**
 pip install -r requirements.txt
 
 ###  Ejecutar la Pipeline Principal                       
