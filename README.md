@@ -29,10 +29,41 @@ CDIO-repository
  - 📂 tests/         # Pruebas unitarias de los módulos
 
 
-**Descarga y Procesamiento de Imagenes**:
 
-En este apartado accedemos al los archivos de STAC para buscar y descargar bandas multiespectrales (Green y NIR) de Sentinel-2.
+**Descarga de Imagenes (/download)**:
+
+En este apartado accedemos al los archivos de STAC para buscar y descargar bandas multiespectrales (Green y NIR) de Sentinel-2 con baja nubidosidad.
 
 - search_images.py / download_gt_scenes.py: Buscan y descargan imágenes de las fechas de interes.
 
 - ndwi_n_photose.py / ndwi_denoising.py: Aplican métodos de reducción de ruido y calculan el índice NDWI utilizando Multiprocesamiento y Multithreading.
+
+
+**Procesamiento de Imagenes (/processing)**:
+
+Transformamos los indices de NDWI en lineas que representan la costa.
+
+- detect_waterbody.py: Procesa el NDWI para separar las masas de agua.
+
+- coastline_estimator.py: Utiliza un análisis para detectar los píxeles entre tierra y agua.
+
+- generate_shorelines_csv.py: Transforma esos píxeles en contornos ordenados y los unifica en un archivo CSV fácil de analizar.
+
+
+**Evaluación y Validación (/evaluation)**
+
+Módulo encargado de medir la erosión y la precisión de nuestros algoritmos.
+
+- calculate_erosion.py: Dibuja una lineas que siguen la forma general de la costa.
+  
+- validate.py / validate_ground_truth.py: Compara nuestras costas estimadas por satélite con datos medidos in situ (Ground Truth), calculando el erro (RMSE).
+
+- experiments_morphology.py: Codigo de experimentación que compara diferentes filtros de ruido con filtros que limpian y pulen las formas de las imagenes para encontrar el modelo más preciso.
+
+
+**Pipeline Principal (/pipeline)**
+
+cdio_pipeline.py: Es el ejecutador del proyecto. Permite ejecutar todo el flujo de trabajo (descarga > procesamiento > evaluación) con un solo comando, pudiendo elegir qué técnica de corrección de ruido aplicar.
+
+
+
