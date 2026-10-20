@@ -14,10 +14,16 @@ Somos un grupo de estudiantes apasionados por la observación de la Tierra y esp
 
 El código está organizado de forma esquematica para separar claramente las distintas fases del procesamiento de los datos. Esta es la estructura principal del repositorio:
 
-cdio-1-repository
+CDIO-repository
+
  ┣ 📂 data/          # (Se genera al ejecutar) Imágenes Sentinel-2, GeoJSONs, Ground Truth y resultados
+ 
  ┣ 📂 download/      # Descarga de datos y preprocesamiento
+ 
  ┣ 📂 processing/    # Algoritmos de extracción de costas
+ 
  ┣ 📂 evaluation/    # Validación y cálculo de errores
+ 
  ┣ 📂 pipeline/      # Orquestador del proyecto
+ 
  ┗ 📂 tests/         # Pruebas unitarias de los módulos
