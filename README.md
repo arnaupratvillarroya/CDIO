@@ -113,8 +113,6 @@ Mediante la combinación de las bandas espectrales **Green** y **NIR** de Sentin
 <img width="1500" height="1200" alt="S2A_31TDF_20180717_0_L2A_NDWI" src="https://github.com/user-attachments/assets/71f3a4bf-ec8c-437d-96b4-89b675ce1138" />
 
 
-[S2A_31TDF_20180717_0_L2A_NDWI.tif](https://github.com/user-attachments/files/33742940/S2A_31TDF_20180717_0_L2A_NDWI.tif)
-
 
 ### 2. Impacto del *Denoising* en la Extracción de la Línea de Costa
 
