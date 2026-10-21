@@ -83,13 +83,13 @@ cd nombre-del-repo
 **2. Crear y activar el entorno virtual**
 python -m venv env
 
-**En Mac/Linux:**
-source env/bin/activate
+**- En Mac/Linux:**
+    source env/bin/activate
 
-**En Windows:**
-**env\Scripts\activate**
+**- En Windows:**
+    env\Scripts\activate
 
-**Instalar las dependencias**
+**3. Instalar las dependencias**
 pip install -r requirements.txt
 
 ###  Ejecutar la Pipeline Principal                       
