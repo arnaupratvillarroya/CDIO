@@ -85,6 +85,7 @@ python -m venv env
 
 **En Mac/Linux:**
 source env/bin/activate
+
 **En Windows:**
 **env\Scripts\activate**
 
