@@ -57,7 +57,7 @@ Módulo encargado de medir la erosión y la precisión de nuestros algoritmos.
 
 - calculate_erosion.py: Dibuja una lineas que siguen la forma general de la costa.
   
-- validate.py / validate_ground_truth.py: Compara nuestras costas estimadas por satélite con datos medidos in situ (Ground Truth), calculando el erro (RMSE).
+- validate.py / validate_ground_truth.py: Compara nuestras costas estimadas por satélite con datos medidos in situ (Ground Truth), calculando el error (RMSE).
 
 - experiments_morphology.py: Codigo de experimentación que compara diferentes filtros de ruido con filtros que limpian y pulen las formas de las imagenes para encontrar el modelo más preciso.
 
