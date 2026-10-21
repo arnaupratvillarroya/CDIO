@@ -63,7 +63,7 @@ def main():
     if not args.skip_ndwi:
         run_stage(
             f"DESCARGA DE IMÁGENES + CÁLCULO NDWI ({args.method})",
-            "download/ndwi_n_photose.py",
+            "processing/ndwi_n_photose.py",
             extra_args=["--method", args.method]
         )
     else:
