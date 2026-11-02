@@ -123,3 +123,120 @@ X_train = X_train.reshape(
 
 print("X_train LSTM shape:", X_train.shape)
 
+
+# --------------------------------------------------
+# 7. Create test sequences
+# --------------------------------------------------
+
+# Combine the last training window with the test data.
+test_input = np.concatenate([
+    train_scaled[-WINDOW_SIZE:],
+    test_scaled
+])
+
+X_test, y_test = create_sequences(
+    test_input,
+    WINDOW_SIZE
+)
+
+# Reshape for LSTM input
+X_test = X_test.reshape(
+    X_test.shape[0],
+    X_test.shape[1],
+    1
+)
+
+print("\nTest windows:")
+print("X_test shape:", X_test.shape)
+print("y_test shape:", y_test.shape)
+
+
+# --------------------------------------------------
+# 8. Build and train LSTM model
+# --------------------------------------------------
+
+import keras
+from keras import layers
+from keras.callbacks import EarlyStopping
+
+# Chronological split of training windows
+X_fit = X_train[:48]
+y_fit = y_train[:48]
+
+X_val = X_train[48:]
+y_val = y_train[48:]
+
+print("\nTraining/validation split:")
+print("X_fit:", X_fit.shape)
+print("y_fit:", y_fit.shape)
+print("X_val:", X_val.shape)
+print("y_val:", y_val.shape)
+
+# Build a small LSTM model
+model = keras.Sequential([
+    layers.Input(shape=(WINDOW_SIZE, 1)),
+    layers.LSTM(16),
+    layers.Dense(1)
+])
+
+# Compile model
+model.compile(
+    optimizer="adam",
+    loss="mse",
+    metrics=["mae"]
+)
+
+# Early stopping
+early_stopping = EarlyStopping(
+    monitor="val_loss",
+    patience=15,
+    restore_best_weights=True
+)
+
+# Train model
+history = model.fit(
+    X_fit,
+    y_fit,
+    validation_data=(X_val, y_val),
+    epochs=200,
+    batch_size=8,
+    callbacks=[early_stopping],
+    shuffle=False,
+    verbose=1
+)
+
+print("\nTraining completed.")
+print("Epochs executed:", len(history.history["loss"]))
+
+
+# --------------------------------------------------
+# 9. Evaluate LSTM on test data
+# --------------------------------------------------
+
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+
+# Predict normalized test values
+y_pred_scaled = model.predict(X_test, verbose=0).flatten()
+
+# Convert predictions and targets back to meters
+y_pred = y_pred_scaled * train_std + train_mean
+y_test_m = y_test * train_std + train_mean
+
+# Calculate metrics
+mae = mean_absolute_error(y_test_m, y_pred)
+
+rmse = np.sqrt(
+    mean_squared_error(y_test_m, y_pred)
+)
+
+r2 = r2_score(y_test_m, y_pred)
+
+print("\nLSTM TEST METRICS")
+print("-----------------")
+print(f"MAE:  {mae:.3f} m")
+print(f"RMSE: {rmse:.3f} m")
+print(f"R2:   {r2:.3f}")
+
+
