@@ -85,3 +85,41 @@ print("Training mean:", train_mean)
 print("Training standard deviation:", train_std)
 
 print("\nPreparation completed successfully.")
+
+
+# --------------------------------------------------
+# 6. Create sliding windows
+# --------------------------------------------------
+
+def create_sequences(data, window_size):
+    X = []
+    y = []
+
+    for i in range(len(data) - window_size):
+        X.append(data[i:i + window_size])
+        y.append(data[i + window_size])
+
+    return np.array(X), np.array(y)
+
+
+# Create training sequences
+X_train, y_train = create_sequences(
+    train_scaled,
+    WINDOW_SIZE
+)
+
+# Print shapes
+print("\nSliding windows:")
+print("X_train shape:", X_train.shape)
+print("y_train shape:", y_train.shape)
+
+# Reshape for LSTM input:
+# (samples, timesteps, features)
+X_train = X_train.reshape(
+    X_train.shape[0],
+    X_train.shape[1],
+    1
+)
+
+print("X_train LSTM shape:", X_train.shape)
+
