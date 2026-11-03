@@ -147,6 +147,7 @@ Al aplicar técnicas de filtrado espacial (**Boxcar 4x4** o **Bilateral**), se e
 Tras el filtrado de ruido y el cálculo de la máscara binaria de agua, la aplicación de operadores morfológicos es fundamental para pulir la geometría:
 
 **Apertura (*Opening*):** Elimina el ruido de pequeños píxeles aislados en la zona terrestre.
+
 **Cierre (*Closing*):** Rellena pequeños huecos dentro de la masa de agua.
 
 La experimentación permite evaluar de forma cuantitativa el rendimiento de distintas configuraciones frente al **Ground Truth**:
