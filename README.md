@@ -17,17 +17,20 @@ El código está organizado de forma esquematica para separar claramente las dis
 
 CDIO-repository
 
- - 📂 data/          # (Se genera al ejecutar) Imágenes Sentinel-2, GeoJSONs, Ground Truth y resultados
+ - 📂 data/                  # (Se genera al ejecutar) Imágenes Sentinel-2, GeoJSONs, Ground Truth y resultados
  
- - 📂 download/      # Descarga de datos y preprocesamiento
+ - 📂 download/              # Descarga de datos y preprocesamiento
  
- - 📂 processing/    # Algoritmos de extracción de costas
+ - 📂 processing/            # Algoritmos de extracción de costas
  
- - 📂 evaluation/    # Validación y cálculo de errores
+ - 📂 evaluation/            # Validación y cálculo de errores
  
- - 📂 pipeline/      # Orquestador del proyecto
+ - 📂 pipeline/              # Orquestador del proyecto
  
- - 📂 tests/         # Pruebas unitarias de los módulos
+ - 📂 tests/                 # Pruebas unitarias de los módulos
+
+ - 📂 coastal_timeseries/    # Módulo avanzado de series temporales y machine learning
+ - 
 
 
 
@@ -37,8 +40,7 @@ En este apartado accedemos al los archivos de STAC para buscar y descargar banda
 
 - search_images.py / download_gt_scenes.py: Buscan y descargan imágenes de las fechas de interes.
 
-- ndwi_n_photose.py / ndwi_denoising.py: Aplican métodos de reducción de ruido y calculan el índice NDWI utilizando Multiprocesamiento y Multithreading.
-
+- nano_cloud_filter: Filtra imágenes según el porcentaje de nubosidad
 
 **Procesamiento de Imagenes (/processing)**:
 
@@ -50,6 +52,7 @@ Transformamos los indices de NDWI en lineas que representan la costa.
 
 - generate_shorelines_csv.py: Transforma esos píxeles en contornos ordenados y los unifica en un archivo CSV fácil de analizar.
 
+- ndwi_n_photose.py / ndwi_denoising.py: Aplican métodos de reducción de ruido y calculan el índice NDWI utilizando Multiprocesamiento y Multithreading.
 
 **Evaluación y Validación (/evaluation)**
 
@@ -65,8 +68,16 @@ Módulo encargado de medir la erosión y la precisión de nuestros algoritmos.
 **Pipeline Principal (/pipeline)**
 
 - cdio_pipeline.py: Es el ejecutador del proyecto. Permite ejecutar todo el flujo de trabajo (descarga > procesamiento > evaluación) con un solo comando, pudiendo elegir qué técnica de corrección de ruido aplicar.
+ 
+**Análisis de Series Temporales y Modelado**
 
+- s10_part_prepare.py / s10_part2_analysis.py: Limpia, filtra outliers y convierte los datos en una serie temporal mensual regular, incluyendo descomposición de la tendencia y análisis estacional, evaluando modelos lineales, de escalón y sigmoides.
 
+- s11_forecasting.py / s11_compare.py: Entrenamiento de redes neuronales recurrentes (LSTM) y comparación empírica de diversos modelos.
+
+- s12_compare.py / s12_lstm_forecast.py / s12_parametric_forecast.py / s12_prepare.py / s12_run_all.py: Preparación de las observaciones reales para el primer semestre de 2025, ejecución de pronósticos a largo plazo y orquestador global de la sesión.
+
+- results_s10 / results_s11 / results_s12: Carpetas generadas automáticamente que contienen todos los resultados de sus respectivas sesiones.
 
 ## Instalación y Ejecución
 
@@ -93,13 +104,19 @@ python -m venv env
 pip install -r requirements.txt
 
 ###  Ejecutar la Pipeline Principal                       
-La forma más recomendable y facil de ejecutar todo el proyecto (desde la descarga de imágenes hasta la validación de la línea de costa) es utilizar el codigo principal (pipeline).
+La forma más recomendable y facil de ejecutar toda la primera parte del proyecto (desde la descarga de imágenes hasta la validación de la línea de costa) es utilizar el código principal (pipeline).
 
 Puedes elegir el método de reducción de ruido que prefieras añadiendo el argumento --method (opciones: none, boxcar_4x4, bilateral). 
 
 Por ejemplo:
 
 - python pipeline/cdio_pipeline.py --method bilateral
+
+### Ejecutar Modelo de Series Temporales y Predicción (Sesiones 10-12)
+
+La forma más recomendable y eficiente de ejecutar la segunda parte del código (que incluye la regularización de la serie temporal, entrenamiento de modelos y comparación paramétrica) es ejecutando el código general de esta sesión escribiendo la siguiente línea en la terminal:
+
+- python coastal_timeseries/s12_run_all.py
 
 ## Resultados Visuales y Ejemplos Ilustrativos
 
@@ -124,3 +141,42 @@ Al aplicar técnicas de filtrado espacial (**Boxcar 4x4** o **Bilateral**), se e
 <img width="1600" height="640" alt="image" src="https://github.com/user-attachments/assets/499a5a97-c561-4044-9f84-60e99274da3d" />
 
 
+
+### 3. Impacto de las Operaciones Morfológicas en la Extracción
+
+Tras el filtrado de ruido y el cálculo de la máscara binaria de agua, la aplicación de operadores morfológicos es fundamental para pulir la geometría:
+
+**Apertura (*Opening*):** Elimina el ruido de pequeños píxeles aislados en la zona terrestre.
+**Cierre (*Closing*):** Rellena pequeños huecos dentro de la masa de agua.
+
+La experimentación permite evaluar de forma cuantitativa el rendimiento de distintas configuraciones frente al **Ground Truth**:
+
+<img width="1600" height="900" alt="Comparativa cualitativa GT 2019-05-23" src="data/output/experiments/qualitative_2019-05-23.png" />
+
+
+
+Este refinamiento permite obtener un contorno continuo y limpio antes de convertir los píxeles a formatos vectoriales.
+
+### 4. Modelado Avanzado de Series Temporales y Machine Learning
+
+En esta sección se amplía de forma significativa las capacidades del proyecto, abordando el análisis evolutivo y la predicción a medio y largo plazo de la línea de costa de la zona de interés. Esta parte se divide en 3 fases:
+
+ **Regularización y Análisis Espectral (FFT):**
+Se procesa la serie temporal mensual detectando valores perdidos y filtrando valores atípicos. Se analizan también las frecuencias con la Transformada de Fourier para aislar los ciclos estacionales dominantes. 
+
+<img width="1600" height="400" alt="Boxplots serie temporal" src="coastal_timeseries/results_s10/11_boxplots.png" />
+
+<img width="1600" height="800" alt="Espectro FFT" src="coastal_timeseries/results_s10/12_fft_spectrum.png" />
+
+  
+
+ **Modelado Paramétrico y Dinámica Costera:**
+ Se ajustan los modelos de tendencia analíticos, como *linear*, *step* y *sigmoide* para capturar saltos bruscos y cuantifiacar la velocidad y aceleración de la costa ante eventos extremos.
+
+<img width="1600" height="1600" alt="Comparativa de modelos de tendencia" src="coastal_timeseries/results_s11/s11_model_comparison.png" />
+
+
+  **Machine Learning:**
+Se hace un pronóstico a medio/largo plazo mediante redes neuronales **LSTM** frente al modelo paramétrico ***Step + FFT***.
+
+<img width="1600" height="800" alt="Comparativa final H1 2025" src="coastal_timeseries/results_s12/s12_final_model_comparison.png" />
