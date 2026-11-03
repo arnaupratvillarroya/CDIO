@@ -1,0 +1,2 @@
+confidence_level,residual_std_m,test_observations,observations_inside_interval,empirical_coverage_percent,first_month_margin_m,last_month_margin_m
+0.95,3.7447589628576523,24,22,91.66666666666666,7.390522135679092,8.475187373404026

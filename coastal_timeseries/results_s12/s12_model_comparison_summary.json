@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "Step + FFT": {
+      "MAE_m": 4.902580531753761,
+      "RMSE_m": 5.187583880883652,
+      "R2": -9.434616573199811
+    },
+    "LSTM recursiu": {
+      "MAE_m": 3.4701452785396634,
+      "RMSE_m": 3.8011382701529257,
+      "R2": -4.602392946760911
+    }
+  },
+  "parametric_95_interval_coverage": {
+    "inside_interval": 6,
+    "total_observations": 6,
+    "empirical_coverage_percent": 100.0
+  },
+  "validation_period": "2025-01 to 2025-06",
+  "n_validation_months": 6,
+  "note": "Both models are evaluated on the same six observed months. The LSTM forecast is recursive; the parametric model is extrapolated directly. The small validation sample limits generalization claims."
+}

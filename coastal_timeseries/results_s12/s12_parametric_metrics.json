@@ -1,0 +1,16 @@
+{
+  "model": "Step + FFT",
+  "n_cycles": 1,
+  "t_jump": 37,
+  "training_observations": 96,
+  "residual_std": 3.7306289103635217,
+  "prediction_interval_formula": "yhat +/- 1.96 * sigma * sqrt(1 + h/n)",
+  "metrics_2025": {
+    "RMSE": 5.187583880883652,
+    "MAE": 4.902580531753761,
+    "R2": -9.434616573199811
+  },
+  "observations_inside_95_interval": 6,
+  "total_observations": 6,
+  "empirical_interval_coverage": 1.0
+}

@@ -1,0 +1,21 @@
+{
+  "model": "Univariate LSTM (recursive six-step forecast)",
+  "window_size": 12,
+  "lstm_units": 16,
+  "batch_size": 8,
+  "max_epochs": 200,
+  "early_stopping_patience": 15,
+  "best_epoch_from_temporal_validation": 96,
+  "best_validation_loss_scaled": 0.09722382575273514,
+  "training_observations": 96,
+  "training_start": "2017-01-01",
+  "training_end": "2024-12-01",
+  "normalization_mean": 4.480695724487305,
+  "normalization_std": 6.903005599975586,
+  "forecast_strategy": "recursive; each prediction feeds the next input window",
+  "metrics_2025": {
+    "RMSE": 3.8011382701529257,
+    "MAE": 3.4701452785396634,
+    "R2": -4.602392946760911
+  }
+}

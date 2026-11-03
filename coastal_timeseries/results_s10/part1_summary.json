@@ -1,37 +1,16 @@
 {
-  "n_rows_raw": 60450,
-  "n_dates": 23,
-  "n_transects": 2325,
+  "n_rows_raw": 373974,
+  "n_dates": 791,
+  "n_transects": 470,
   "window_ids": [
-    200,
-    299
+    18,
+    117
   ],
   "n_transects_kept": 100,
-  "n_outliers_removed": 22,
-  "n_dates_kept": 23,
+  "n_outliers_removed": 2211,
+  "n_dates_kept": 723,
   "freq": "MS",
-  "n_points": 85,
-  "n_interpolated": 73,
-  "long_gaps": [
-    [
-      "2018-08-01",
-      "2019-04-01",
-      9
-    ],
-    [
-      "2019-07-01",
-      "2020-04-01",
-      10
-    ],
-    [
-      "2020-07-01",
-      "2021-05-01",
-      11
-    ],
-    [
-      "2021-07-01",
-      "2025-01-01",
-      43
-    ]
-  ]
+  "n_points": 96,
+  "n_interpolated": 0,
+  "long_gaps": []
 }

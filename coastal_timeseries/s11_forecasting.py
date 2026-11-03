@@ -239,4 +239,14 @@ print(f"MAE:  {mae:.3f} m")
 print(f"RMSE: {rmse:.3f} m")
 print(f"R2:   {r2:.3f}")
 
+# --------------------------------------------------
+# 10. Save LSTM predictions to CSV
+# --------------------------------------------------
+lstm_results_df = pd.DataFrame({
+    "date": df["date"].iloc[TRAIN_SIZE:].to_numpy(),
+    "actual": y_test_m,
+    "lstm_prediction": y_pred
+})
 
+lstm_results_df.to_csv(OUTPUT_DIR / "lstm_predictions.csv", index=False)
+print(f"\nLSTM predictions successfully saved to: {OUTPUT_DIR / 'lstm_predictions.csv'}")
