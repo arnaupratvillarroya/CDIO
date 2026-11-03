@@ -151,7 +151,7 @@ Tras el filtrado de ruido y el cálculo de la máscara binaria de agua, la aplic
 
 La experimentación permite evaluar de forma cuantitativa el rendimiento de distintas configuraciones frente al **Ground Truth**:
 
-<img width="1600" height="900" alt="Comparativa cualitativa GT 2019-05-23" src="data/output/experiments/qualitative_2019-05-23.png" />
+<img width="1820" height="1040" alt="qualitative_2019-05-23" src="https://github.com/user-attachments/assets/783433f2-5f50-4028-ae01-48379e215165" />
 
 
 
@@ -164,19 +164,21 @@ En esta sección se amplía de forma significativa las capacidades del proyecto,
  **Regularización y Análisis Espectral (FFT):**
 Se procesa la serie temporal mensual detectando valores perdidos y filtrando valores atípicos. Se analizan también las frecuencias con la Transformada de Fourier para aislar los ciclos estacionales dominantes. 
 
-<img width="1600" height="400" alt="Boxplots serie temporal" src="coastal_timeseries/results_s10/11_boxplots.png" />
+<img width="2210" height="520" alt="11_boxplots" src="https://github.com/user-attachments/assets/dc2a9b28-9ab6-4a3a-8540-84caf99b65cb" />
 
-<img width="1600" height="800" alt="Espectro FFT" src="coastal_timeseries/results_s10/12_fft_spectrum.png" />
+<img width="1300" height="520" alt="12_fft_spectrum" src="https://github.com/user-attachments/assets/14607d61-2392-4de8-8a72-736158072a39" />
 
-  
+
 
  **Modelado Paramétrico y Dinámica Costera:**
  Se ajustan los modelos de tendencia analíticos, como *linear*, *step* y *sigmoide* para capturar saltos bruscos y cuantifiacar la velocidad y aceleración de la costa ante eventos extremos.
 
-<img width="1600" height="1600" alt="Comparativa de modelos de tendencia" src="coastal_timeseries/results_s11/s11_model_comparison.png" />
+<img width="3565" height="1769" alt="s11_model_comparison" src="https://github.com/user-attachments/assets/b7122760-6050-41d9-a9ac-3180f226ada4" />
+
 
 
   **Machine Learning:**
 Se hace un pronóstico a medio/largo plazo mediante redes neuronales **LSTM** frente al modelo paramétrico ***Step + FFT***.
 
-<img width="1600" height="800" alt="Comparativa final H1 2025" src="coastal_timeseries/results_s12/s12_final_model_comparison.png" />
+<img width="2860" height="1430" alt="s12_final_model_comparison" src="https://github.com/user-attachments/assets/88a9f5dd-be05-445e-ab12-cad1f1a7b747" />
+
